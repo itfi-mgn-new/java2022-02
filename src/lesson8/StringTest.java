@@ -8,6 +8,8 @@ public class StringTest {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		String	x = "vassya";
+
+		Character	c;
 		
 		System.err.println("length="+x.length());
 		System.err.println("x[0]="+x.charAt(0));
