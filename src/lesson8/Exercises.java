@@ -47,6 +47,20 @@ public class Exercises {
 			count -= 2;
 		}
 		System.err.println("Res="+new String(result));
+		
+		System.err.println("I="+String.valueOf(1.2));
+		int x = Integer.valueOf("1235");
+		
+		// v = "12-22+7"
+		//
+		String v = "12-22+7";
+		int sum = 0;
+		for (String s1 : v.replace("-","+-").split("\\+")) {
+			sum += Integer.valueOf(s1);
+		}
+		System.err.println("Sum="+sum);
+		
+		
 	}
 
 }
