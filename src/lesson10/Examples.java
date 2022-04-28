@@ -9,6 +9,8 @@ public class Examples {
 		//	 200
 		//	 3309
 		// 2. Read file content and calculate it's sum
+		// 3. Store sum calculated to another file
+		// PrintWriter
 	}
 
 }
