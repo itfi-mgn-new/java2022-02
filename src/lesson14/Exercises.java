@@ -1,5 +1,9 @@
 package lesson14;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+
 public class Exercises {
 
 	public static void main(String[] args) {
@@ -25,6 +29,16 @@ public class Exercises {
 		//		susleg - 2
 		//		etc...
 	
+		final Map<String,int[]> counter = new HashMap<>();
+		
+		for (String item : new String[] {"abizjan", "susleg", "medved", "kote", "susleg", "varon", "arol"}) {
+			if (!counter.containsKey(item)) {
+				counter.put(item, new int[] {0});
+			}
+			counter.get(item)[0]++;
+		}
+		for (Entry<String, int[]> item : counter.entrySet()) {
+			System.err.println(item.getKey()+" - "+item.getValue()[0]);
+		}
 	}
-
 }
