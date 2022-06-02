@@ -2,8 +2,10 @@ package lesson14;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class CollectionTest {
@@ -84,6 +86,27 @@ public class CollectionTest {
 		for (String item : s) {
 			System.err.println("Item: "+item);
 		}
+		String[]	ss = l.toArray(new String[l.size()]);
+	
+		System.err.println("----------------------------");
+	
+		Map<String,String>	m = new HashMap<>();
+		
+		System.err.println("Size="+m.size());
+		m.put("vassya", "durak");
+		m.put("igor", "durak^2");
+		System.err.println(m.put("vassya", "durak^3"));
+		
+		for(String item : m.keySet()) {
+			System.err.println("KEy="+item);
+		}
+		for(String item : m.values()) {
+			System.err.println("Value="+item);
+		}
+		for(Map.Entry<String,String> item : m.entrySet()) {
+			System.err.println("Key="+item.getKey()+",value="+item.getValue());
+		}
+		System.err.println("COntains: "+m.containsKey("vassya"));
 	}
 
 }
