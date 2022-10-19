@@ -53,6 +53,8 @@ public class XMLStAXParserAndPrinter {
 		    writer.add(event);
 		    event = eventFactory.createAttribute("attributeName", "attributeValue"); 
 		    writer.add(event);
+		    event = eventFactory.createCharacters("sdsdsd");
+		    writer.add(event);
 		    event = eventFactory.createEndElement("test", "http://test.com", "document"); 
 		    writer.add(event);
 

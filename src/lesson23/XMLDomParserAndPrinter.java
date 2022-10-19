@@ -11,6 +11,9 @@ import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathFactory;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -43,6 +46,17 @@ public class XMLDomParserAndPrinter {
                System.err.println("Nick Name : " + eElement.getElementsByTagName("nickname").item(0).getTextContent());
                System.err.println("Age : " + eElement.getElementsByTagName("age").item(0).getTextContent());
             }
+         }
+         
+         final NodeList nAges = doc.getElementsByTagName("age");
+     
+         XPath xPath = XPathFactory.newInstance().newXPath();
+         String expression = "/persons/*[@id=\"1\"]/age";
+         final NodeList found = (NodeList) xPath.compile(expression).evaluate(doc.getDocumentElement(), XPathConstants.NODESET);         
+         
+         for (int temp = 0; temp < found.getLength(); temp++) {	// <3>
+            final Node 		nNode = found.item(temp);
+            System.err.println("\nFound Element :" + nNode.getNodeName()+" "+nNode.getTextContent());
          }
          
          final Node				newPerson = doc.createElement("person");	// <4> 
